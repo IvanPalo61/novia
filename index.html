@@ -41,6 +41,8 @@
     .photo button { display:block; width:fit-content; margin:13px auto 0; }
     .photo button:hover, .photo button:focus-visible, .final-button:hover, .final-button:focus-visible { transform:translate(2px,2px); box-shadow:1px 1px 0 #3e2c16; outline:none; }
     .wide { grid-column:1/-1; width:min(100%,680px); margin:auto; }
+    .special { grid-column:1/-1; width:min(100%,520px); margin:8px auto; background:#fbf3ff; }
+    .special:before { content:'💜 🌷 💜'; background:linear-gradient(135deg,#f7e9ff,#d7b3ef); font-size:clamp(2.4rem,8vw,4.7rem); letter-spacing:.16em; }
     .coming { position:relative; text-align:center; padding:clamp(42px,8vw,80px) 22px; background:#4c713d; color:#fffbe7; border-radius:35px; overflow:hidden; box-shadow:10px 12px 0 #253e22; }
     .coming:before, .coming:after { content:'🌻'; position:absolute; font-size:120px; opacity:.18; } .coming:before{left:-20px;top:-18px}.coming:after{right:-22px;bottom:-20px}
     .coming h2 { color:#fff8d5; position:relative; }.coming p{font-size:clamp(1.05rem,2.5vw,1.3rem);line-height:1.65;max-width:620px;margin:auto;font-weight:700;position:relative}
@@ -84,7 +86,7 @@
     <section class="gallery" aria-label="Flores de parte de BTS">
       <figure class="photo"><figcaption>Unas rosas rojas para ti ❤️</figcaption><button type="button" data-image="yoongi2.jpg" data-caption="Unas rosas rojas para ti ❤️">Abrir mi sorpresa</button></figure>
       <figure class="photo"><figcaption>Un girasol trae un mensajito para ti 🌻</figcaption><button type="button" data-image="yoongi.jpg" data-caption="Y un girasol que te manda buena vibra 🌻">Abrir mi sorpresa</button></figure>
-      <figure class="photo"><figcaption>También llegaron flores moraditas para ti 💜</figcaption><button type="button" data-image="yoongi3.png" data-caption="Un ramito morado para la novia más linda 💜">Abrir mi sorpresa</button></figure>
+      <figure class="photo special"><figcaption>También llegaron flores moraditas para ti 💜</figcaption><button type="button" data-image="yoongi3.png" data-caption="Un ramito morado para la novia más linda 💜">Abrir sorpresa moradita</button></figure>
       <figure class="photo wide"><figcaption>Hay todo un ramo reservado para ti ✨</figcaption><button type="button" data-image="WhatsApp Image 2026-08-01 at 12.06.20 AM.jpeg" data-caption="Todo un campo de girasoles, enviado especialmente para ti ✨">Ver el ramo completo</button></figure>
       <figure class="photo"><figcaption>El comité tiene algo que decirte 💛</figcaption><button type="button" data-image="WhatsApp Image 2026-08-01 at 12.06.20 AM (1).jpeg" data-caption="El comité oficial de flores aprueba este mensaje 💛">Abrir el mensaje</button></figure>
     </section>
