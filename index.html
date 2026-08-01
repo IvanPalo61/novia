@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feliz Día de la Novia, mi amor 🌻</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&display=swap');
+
+    :root { --ink:#322313; --cream:#fff9e9; --gold:#f6b914; --sun:#ffd84d; --orange:#ef7d22; --leaf:#46733c; --rose:#c83948; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:Nunito,Arial,sans-serif; overflow-x:hidden; }
+    .sunbeam { position:fixed; inset:-50vmax; z-index:-2; background:repeating-conic-gradient(from 0deg, #fff7d4 0 9deg, #fffdf3 9deg 18deg); animation:turn 110s linear infinite; }
+    .grain { position:fixed; inset:0; pointer-events:none; opacity:.25; z-index:3; background-image:radial-gradient(#6d5027 .55px,transparent .7px); background-size:5px 5px; mix-blend-mode:multiply; }
+    .flowers { position:fixed; inset:0; overflow:hidden; z-index:-1; pointer-events:none; }
+    .flowers span { position:absolute; font-size:clamp(26px,4vw,56px); opacity:.55; animation:float 7s ease-in-out infinite; }
+    .flowers span:nth-child(1){left:5%;top:16%;animation-delay:-1s}.flowers span:nth-child(2){right:8%;top:24%;animation-delay:-3s}.flowers span:nth-child(3){left:11%;bottom:8%;animation-delay:-5s}.flowers span:nth-child(4){right:5%;bottom:5%;animation-delay:-2s}
+    header { min-height:100vh; display:grid; place-items:center; padding:40px 20px; }
+    .hero { width:min(100%,960px); text-align:center; position:relative; }
+    .eyebrow { display:inline-flex; gap:8px; align-items:center; padding:9px 16px; border-radius:999px; color:#6b4714; font-weight:800; background:#fff2b5; box-shadow:0 5px 0 #e9c95b; animation:pop .8s both; }
+    .date { margin:16px 0 -8px; color:#8c5b1d; text-transform:uppercase; font-size:.82rem; font-weight:900; letter-spacing:.18em; animation:rise .9s .05s both; }
+    h1 { font:clamp(3.5rem,10vw,7.5rem)/.86 'DM Serif Display',Georgia,serif; margin:28px 0 18px; letter-spacing:-.055em; color:#5a2c24; text-shadow:3px 4px 0 #ffc94b; animation:rise .9s .1s both; }
+    h1 em { color:var(--rose); font-style:italic; }
+    .intro { margin:0 auto; max-width:670px; font-size:clamp(1.05rem,2.5vw,1.35rem); line-height:1.7; font-weight:600; animation:rise .9s .25s both; }
+    .scroll { display:inline-block; margin-top:36px; padding:13px 23px; border:2px solid var(--ink); border-radius:30px; text-decoration:none; color:var(--ink); font-weight:800; background:#fff; box-shadow:4px 4px 0 var(--ink); transition:.2s; animation:rise .9s .4s both; }
+    .scroll:hover { transform:translate(3px,3px); box-shadow:1px 1px 0 var(--ink); }
+    main { width:min(100%,1100px); margin:auto; padding:30px 20px 90px; }
+    .note { background:#fffefa; border:2px solid #3e2c16; border-radius:28px; padding:clamp(28px,6vw,65px); box-shadow:10px 12px 0 #f1c539; position:relative; overflow:hidden; }
+    .note:after { content:'♥'; position:absolute; right:25px; bottom:-37px; color:#f5bf26; font:150px Georgia; opacity:.28; transform:rotate(-15deg); }
+    .note h2, .coming h2 { font:clamp(2.2rem,6vw,4.4rem)/.95 'DM Serif Display',Georgia,serif; margin:0 0 24px; color:#5a2c24; }
+    .reason { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:30px; position:relative; z-index:1; }
+    .reason div { padding:17px 10px; border-radius:16px; background:#fff2b5; font-weight:900; text-align:center; line-height:1.35; }
+    .note p { max-width:800px; margin:0; font-size:clamp(1.1rem,2.5vw,1.35rem); line-height:1.75; font-weight:600; position:relative; z-index:1; }
+    .gallery { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:80px 0; align-items:center; }
+    .photo { background:#fff; padding:12px 12px 18px; border:2px solid #3e2c16; border-radius:5px; box-shadow:8px 9px 0 #3e2c16; transform:rotate(-3deg); transition:transform .35s; }
+    .photo:nth-child(even){transform:rotate(3deg)} .photo:hover{transform:rotate(0) scale(1.03); z-index:2}
+    .photo:before { content:'🌻'; display:grid; place-items:center; width:100%; aspect-ratio:4/2.2; border-radius:4px; background:linear-gradient(135deg,#fff5bd,#f8cf43); font-size:clamp(3.5rem,10vw,6.5rem); }
+    .photo figcaption { padding:14px 4px 0; font-weight:800; text-align:center; font-size:1.05rem; }
+    .photo button, .final-button { appearance:none; cursor:pointer; border:2px solid #3e2c16; background:#ffd84d; color:#3e2c16; font:800 .95rem Nunito,Arial,sans-serif; padding:10px 15px; border-radius:999px; box-shadow:3px 3px 0 #3e2c16; transition:.2s; }
+    .photo button { display:block; width:fit-content; margin:13px auto 0; }
+    .photo button:hover, .photo button:focus-visible, .final-button:hover, .final-button:focus-visible { transform:translate(2px,2px); box-shadow:1px 1px 0 #3e2c16; outline:none; }
+    .wide { grid-column:1/-1; width:min(100%,680px); margin:auto; }
+    .coming { position:relative; text-align:center; padding:clamp(42px,8vw,80px) 22px; background:#4c713d; color:#fffbe7; border-radius:35px; overflow:hidden; box-shadow:10px 12px 0 #253e22; }
+    .coming:before, .coming:after { content:'🌻'; position:absolute; font-size:120px; opacity:.18; } .coming:before{left:-20px;top:-18px}.coming:after{right:-22px;bottom:-20px}
+    .coming h2 { color:#fff8d5; position:relative; }.coming p{font-size:clamp(1.05rem,2.5vw,1.3rem);line-height:1.65;max-width:620px;margin:auto;font-weight:700;position:relative}
+    .tag { display:inline-block; margin-bottom:17px; padding:8px 14px; color:#4a3403; background:var(--sun); border-radius:999px; font-weight:900; letter-spacing:.07em; text-transform:uppercase; transform:rotate(-2deg); }
+    .countdown-title { margin:0 0 14px; font-size:1rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; position:relative; }
+    .countdown { display:flex; justify-content:center; gap:10px; margin:0 auto 31px; position:relative; }
+    .countdown div { width:min(22vw,94px); padding:13px 5px 10px; border:2px solid #fff8d5; border-radius:13px; background:rgba(255,255,255,.11); }
+    .countdown strong { display:block; font:clamp(1.7rem,6vw,3rem)/1 'DM Serif Display',Georgia,serif; color:#ffd84d; }
+    .countdown span { display:block; margin-top:5px; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    footer { text-align:center; padding:45px 20px 60px; font-weight:800; font-size:1.05rem; } footer span{color:var(--rose);font-size:1.35em}
+    .final-button { margin-top:22px; padding:13px 20px; background:#c83948; color:#fff; border-color:#5a2c24; box-shadow:4px 4px 0 #5a2c24; }
+    .modal { position:fixed; inset:0; z-index:10; display:grid; place-items:center; padding:22px; background:rgba(39,26,12,.78); opacity:0; visibility:hidden; transition:opacity .25s,visibility .25s; }
+    .modal.open { opacity:1; visibility:visible; }
+    .modal-card { position:relative; width:min(100%,560px); max-height:90vh; padding:12px; background:#fffdf1; border:3px solid #3e2c16; border-radius:16px; box-shadow:9px 10px 0 #f1c539; transform:scale(.93); transition:transform .25s; }
+    .modal.open .modal-card { transform:scale(1); }
+    .modal img { width:100%; max-height:70vh; display:block; object-fit:contain; border-radius:7px; background:#eadfc4; }
+    .modal p { margin:12px 36px 3px 4px; font-weight:900; text-align:center; }
+    .close { position:absolute; top:-14px; right:-14px; width:38px; height:38px; border:2px solid #3e2c16; border-radius:50%; background:#c83948; color:#fff; cursor:pointer; font-size:1.4rem; font-weight:900; }
+    @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}} @keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}} @keyframes float{50%{transform:translateY(-19px) rotate(10deg)}} @keyframes turn{to{transform:rotate(360deg)}}
+    @media(max-width:650px){.gallery{grid-template-columns:1fr;gap:32px;margin:60px 8px}.wide{grid-column:auto}.note{box-shadow:6px 7px 0 #f1c539}.photo{box-shadow:6px 7px 0 #3e2c16}.reason{grid-template-columns:1fr}h1{font-size:3.65rem}.scroll,.photo button,.final-button{min-height:45px}.modal{padding:14px}.modal-card{max-height:94vh}.modal img{max-height:73vh}}
+  </style>
+</head>
+<body>
+  <div class="sunbeam"></div><div class="grain"></div>
+  <div class="flowers" aria-hidden="true"><span>🌻</span><span>🌼</span><span>🌻</span><span>🌼</span></div>
+  <header>
+    <section class="hero">
+      <div class="eyebrow">🌻 Día de la Novia 🌻</div>
+      <p class="date">Una celebración para mi persona favorita</p>
+      <h1>Feliz Día de la Novia,<br><em>mi amor.</em></h1>
+      <p class="intro">Hoy es la excusa perfecta para recordarte algo que debería decirte siempre: qué suerte tengo de que seas mi novia y de poder compartir mi vida contigo. 💛</p>
+      <a class="scroll" href="#sorpresa">Tu sorpresa está aquí ↓</a>
+    </section>
+  </header>
+  <main id="sorpresa">
+    <section class="note">
+      <h2>Hoy celebramos<br>que eres mi novia.</h2>
+      <p>Sé que a lo mejor dirás: “¿qué me tiene preparado este wey?” Y sí, tal vez no es algo tan novedoso que digas: <em>woow, qué chido</em>… peeeeeero está hecho para ti.<br><br>Yo sé que querías flores. No te traje flores… <strong>ellos sí.</strong> 🌻 Porque tú mereces una lluvia entera de girasoles, risas y detalles que te recuerden lo muchísimo que te amo.</p>
+      <div class="reason"><div>✨ Por hacer mis días más bonitos</div><div>🌻 Por ser tú, así de increíble</div><div>💛 Por ser mi novia favorita</div></div>
+    </section>
+    <section class="gallery" aria-label="Flores de parte de BTS">
+      <figure class="photo"><figcaption>Unas rosas rojas para ti ❤️</figcaption><button type="button" data-image="yoongi2.jpg" data-caption="Unas rosas rojas para ti ❤️">Abrir mi sorpresa</button></figure>
+      <figure class="photo"><figcaption>Un girasol trae un mensajito para ti 🌻</figcaption><button type="button" data-image="yoongi.jpg" data-caption="Y un girasol que te manda buena vibra 🌻">Abrir mi sorpresa</button></figure>
+      <figure class="photo wide"><figcaption>Hay todo un ramo reservado para ti ✨</figcaption><button type="button" data-image="WhatsApp Image 2026-08-01 at 12.06.20 AM.jpeg" data-caption="Todo un campo de girasoles, enviado especialmente para ti ✨">Ver el ramo completo</button></figure>
+      <figure class="photo"><figcaption>El comité tiene algo que decirte 💛</figcaption><button type="button" data-image="WhatsApp Image 2026-08-01 at 12.06.20 AM (1).jpeg" data-caption="El comité oficial de flores aprueba este mensaje 💛">Abrir el mensaje</button></figure>
+    </section>
+    <section class="coming">
+      <div class="tag">Próximamente</div>
+      <p class="countdown-title">Cuenta regresiva para tu otra sorpresa 🌻</p>
+      <div class="countdown" id="countdown" aria-label="Cuenta regresiva hasta el 21 de septiembre">
+        <div><strong id="days">00</strong><span>días</span></div><div><strong id="hours">00</strong><span>horas</span></div><div><strong id="minutes">00</strong><span>minutos</span></div><div><strong id="seconds">00</strong><span>segundos</span></div>
+      </div>
+      <h2>Las flores de verdad<br>también vienen en camino.</h2>
+      <p>Esta es solo una parte de tu Día de la Novia. Porque tú mereces flores, detalles y mil razones para sonreír… hoy, mañana y todos los días que sigas siendo mi amor.</p>
+    </section>
+  </main>
+  <footer>Feliz Día de la Novia, mi amor. Gracias por ser tú <span>♥</span><br><button class="final-button" type="button" id="finalButton">Pícale aquí, amor 💌</button></footer>
+  <div class="modal" id="photoModal" role="dialog" aria-modal="true" aria-labelledby="modalCaption">
+    <div class="modal-card"><button class="close" type="button" aria-label="Cerrar foto">×</button><img id="modalImage" src="" alt=""><p id="modalCaption"></p></div>
+  </div>
+  <script>
+    const modal = document.getElementById('photoModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeModal = () => { modal.classList.remove('open'); modalImage.src = ''; };
+    const fallbackImages = {
+      'yoongi2.jpg': 'file:///C:/Users/apalo/Downloads/yoongi2.jpg',
+      'yoongi.jpg': 'file:///C:/Users/apalo/Downloads/yoongi.jpg',
+      'WhatsApp Image 2026-08-01 at 12.06.20 AM.jpeg': 'file:///C:/Users/apalo/Downloads/WhatsApp%20Image%202026-08-01%20at%2012.06.20%20AM.jpeg',
+      'WhatsApp Image 2026-08-01 at 12.06.20 AM (1).jpeg': 'file:///C:/Users/apalo/Downloads/WhatsApp%20Image%202026-08-01%20at%2012.06.20%20AM%20(1).jpeg'
+    };
+    modalImage.addEventListener('error', () => { if (fallbackImages[modalImage.dataset.local]) modalImage.src = fallbackImages[modalImage.dataset.local]; });
+    document.querySelectorAll('[data-image]').forEach(button => button.addEventListener('click', () => {
+      modalImage.src = button.dataset.image;
+      modalImage.dataset.local = button.dataset.image;
+      modalImage.alt = button.dataset.caption;
+      modalCaption.textContent = button.dataset.caption;
+      modal.classList.add('open');
+    }));
+    document.querySelector('.close').addEventListener('click', closeModal);
+    modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
+    document.getElementById('finalButton').addEventListener('click', () => alert('Y ya presiona a ese wey que nomás no se apura con tu aplicación, que parece promesa de campaña política 😭💛'));
+    const target = new Date('2026-09-21T00:00:00');
+    const pad = number => String(number).padStart(2, '0');
+    function updateCountdown() {
+      let distance = target - new Date();
+      if (distance <= 0) {
+        document.getElementById('countdown').innerHTML = '<div style="width:auto;padding:16px 24px"><strong>¡Llegó el 21 de septiembre! 🌻</strong><span>Feliz día, mi amor</span></div>';
+        return;
+      }
+      const days = Math.floor(distance / 86400000); distance %= 86400000;
+      const hours = Math.floor(distance / 3600000); distance %= 3600000;
+      const minutes = Math.floor(distance / 60000); const seconds = Math.floor((distance % 60000) / 1000);
+      document.getElementById('days').textContent = pad(days);
+      document.getElementById('hours').textContent = pad(hours);
+      document.getElementById('minutes').textContent = pad(minutes);
+      document.getElementById('seconds').textContent = pad(seconds);
+      setTimeout(updateCountdown, 1000);
+    }
+    updateCountdown();
+  </script>
+</body>
+</html>
